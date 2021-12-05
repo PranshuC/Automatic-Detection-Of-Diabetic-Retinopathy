@@ -1,0 +1,38 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="mpeg2_vld_demo"
+ProjectDir="F:\projects\IMGLIB\C6200\Release Mar-02\img62x\examples\mpeg2_vld\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\lib\img62x.lib"
+Source="quant_zz.c"
+Source="vlc_gen.c"
+Source="vld_demo.c"
+Source="local.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-q -o3 -i"../../include" -mh -ml3 -mv6210
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr"F:\projects\IMGLIB\C6200\Release Mar-02\img62x\examples\mpeg2_vld\Release" -mv6400
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-v6x
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-v6x
+
+["Linker" Settings: "Debug"]
+Options=-q -a -c -o"mpeg2_vld.out" -x -l"rts6200.lib"
+
+["Linker" Settings: "Release"]
+Options=-q -c -o".\Release\mpeg2_vld_demo.out" -x
+

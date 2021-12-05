@@ -1,0 +1,37 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="img_ycbcr422p_rgb565"
+ProjectDir=""
+ProjectType=Executable
+CPUFamily=TMS320C62XX
+Tool="Compiler"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="img_ycbcr422p_rgb565_c.c"
+Source="..\support.c"
+Source="img_ycbcr422p_rgb565_d.c"
+Source="..\lnk62.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -fr".\Debug" -i"..\..\include" -d"_DEBUG" -mv6200
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr".\Release" -i"..\..\include" -mv6200
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-v6x
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-v6x
+
+["Linker" Settings: "Debug"]
+Options=-q -c -o".\Debug\img_ycbcr422p_rgb565.out" -heap0x400 -stack0x400 -x -i"..\..\lib" -l"rts6200.lib" -l"img62x.lib" 
+
+["Linker" Settings: "Release"]
+Options=-q -c -o".\Release\img_ycbcr422p_rgb565.out" -heap0x400 -stack0x400 -x -i"..\..\lib" -l"rts6200.lib" -l"img62x.lib" 
+
